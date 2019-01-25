@@ -8,7 +8,7 @@ using gust.Models;
 namespace gust.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190122212058_FirstMigration")]
+    [Migration("20190122213424_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,9 +31,9 @@ namespace gust.Migrations
 
                     b.Property<string>("iso_region");
 
-                    b.Property<int>("latitude_deg");
+                    b.Property<decimal>("latitude_deg");
 
-                    b.Property<int>("longitude_deg");
+                    b.Property<decimal>("longitude_deg");
 
                     b.HasKey("airport_id");
 
@@ -49,11 +49,11 @@ namespace gust.Migrations
 
                     b.Property<int>("airport_ref");
 
-                    b.Property<int>("he_heading_degT");
+                    b.Property<decimal>("he_heading_degT");
 
                     b.Property<string>("he_ident");
 
-                    b.Property<int>("le_heading_degT");
+                    b.Property<decimal>("le_heading_degT");
 
                     b.Property<string>("le_ident");
 

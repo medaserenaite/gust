@@ -15,8 +15,8 @@ namespace gust.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ident = table.Column<string>(nullable: true),
                     airport_name = table.Column<string>(nullable: true),
-                    latitude_deg = table.Column<int>(nullable: false),
-                    longitude_deg = table.Column<int>(nullable: false),
+                    latitude_deg = table.Column<decimal>(nullable: false),
+                    longitude_deg = table.Column<decimal>(nullable: false),
                     iso_country = table.Column<string>(nullable: true),
                     iso_region = table.Column<string>(nullable: true)
                 },
@@ -34,9 +34,9 @@ namespace gust.Migrations
                     airport_ref = table.Column<int>(nullable: false),
                     airport_ident = table.Column<string>(nullable: true),
                     le_ident = table.Column<string>(nullable: true),
-                    le_heading_degT = table.Column<int>(nullable: false),
+                    le_heading_degT = table.Column<decimal>(nullable: false),
                     he_ident = table.Column<string>(nullable: true),
-                    he_heading_degT = table.Column<int>(nullable: false)
+                    he_heading_degT = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

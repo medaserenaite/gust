@@ -29,9 +29,9 @@ namespace gust.Migrations
 
                     b.Property<string>("iso_region");
 
-                    b.Property<int>("latitude_deg");
+                    b.Property<decimal>("latitude_deg");
 
-                    b.Property<int>("longitude_deg");
+                    b.Property<decimal>("longitude_deg");
 
                     b.HasKey("airport_id");
 
@@ -47,11 +47,11 @@ namespace gust.Migrations
 
                     b.Property<int>("airport_ref");
 
-                    b.Property<int>("he_heading_degT");
+                    b.Property<decimal>("he_heading_degT");
 
                     b.Property<string>("he_ident");
 
-                    b.Property<int>("le_heading_degT");
+                    b.Property<decimal>("le_heading_degT");
 
                     b.Property<string>("le_ident");
 

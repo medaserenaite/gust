@@ -10,8 +10,8 @@ namespace gust.Models
         public int airport_ref {get; set; }
         public string airport_ident {get; set; }
         public string le_ident {get; set; }
-        public int le_heading_degT {get; set; }
+        public decimal le_heading_degT {get; set; }
         public string he_ident {get; set; }
-        public int he_heading_degT {get; set; }
+        public decimal he_heading_degT {get; set; }
     }
 }

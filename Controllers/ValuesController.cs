@@ -18,35 +18,50 @@ namespace gust.Controllers
             _context = context;
         }
         // GET api/values
+        // [HttpGet]
+        // public IActionResult AllAirports()
+        // {
+        //     var airports = _context.Airports.ToList();
+        //     return Ok(airports);
+        // }
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult AllRunways()
         {
-            return new string[] { "value1", "value2" };
+            var runways = _context.Runways.ToList();
+            return Ok(runways);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("{run_id}")]
+        public IActionResult OneRunwayDeg(int run_id)
         {
-            return "value";
+            var runway = _context.Runways.FirstOrDefault(x=>x.runway_id == run_id);
+            // var runwaydeg = _context.Runways.Where
+            Runway thisRunway = _context.Runways.FirstOrDefault(c=>c.runway_id == run_id);
+            return Ok(thisRunway);
         }
+        // GET api/values/5
+        // [HttpGet("{airport_id}")]
+        // public ActionResult<string> Get(int id)
+        // {
+        //     return "value";
+        // }
 
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        // [HttpPost]
+        // public void Post([FromBody] string value)
+        // {
+        // }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        // [HttpPut("{id}")]
+        // public void Put(int id, [FromBody] string value)
+        // {
+        // }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        // [HttpDelete("{id}")]
+        // public void Delete(int id)
+        // {
+        // }
     }
 }
